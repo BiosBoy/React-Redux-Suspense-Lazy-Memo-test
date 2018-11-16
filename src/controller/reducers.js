@@ -1,3 +1,4 @@
+import { LOCATION_CHANGE } from 'react-router-redux';
 import { COUNT_ADD } from '../constants';
 import initialState from './initialState';
 
@@ -9,6 +10,10 @@ const ACTION_HANDLERS = {
     ...state,
     count: action.count,
     countDoubl: action.count % 2 === 0 ? action.count : state.countDoubl
+  }),
+  [LOCATION_CHANGE]: (state, action) => ({
+    ...state,
+    locationChange: action.payload.pathname
   })
 };
 

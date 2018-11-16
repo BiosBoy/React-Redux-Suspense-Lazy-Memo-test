@@ -1,10 +1,13 @@
 import { applyMiddleware, compose, createStore } from 'redux';
-import initialState from './initialState';
+import { routerMiddleware } from 'connected-react-router';
 
-import { logger, makeRootReducer } from './middleware';
+import { logger } from './middleware';
+import makeRootReducer from './middleware/rootReducer';
+import initialState from './initialState';
+import history from './history';
 
 const rootStore = () => {
-  const middleware = [logger];
+  const middleware = [routerMiddleware(history), logger];
   const enhancers = [];
 
   if (__DEV__ && window.__REDUX_DEVTOOLS_EXTENSION__) {

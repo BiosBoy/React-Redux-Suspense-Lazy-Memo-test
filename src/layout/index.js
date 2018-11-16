@@ -7,9 +7,9 @@ import styles from '../styles/index.scss';
 
 class AppLayout extends Component {
   render() {
-    const { count, countDoubl, children } = this.props;
+    const { countDoubl, children } = this.props;
 
-    console.log(count, 'count');
+    console.log(this.props, 'count');
 
     return (
       <div className={styles.appWrapper}>
@@ -39,4 +39,9 @@ const mapStateToProps = state => ({
   countDoubl: state.countDoubl
 });
 
-export default withRouter(connect(mapStateToProps, null)(AppLayout));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    null
+  )(AppLayout)
+);

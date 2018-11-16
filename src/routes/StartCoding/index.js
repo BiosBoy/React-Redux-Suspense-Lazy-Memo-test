@@ -5,6 +5,12 @@ import { addCount } from './action';
 import styles from '../../styles/index.scss';
 
 class StartCoding extends PureComponent {
+  componentDidMount() {
+    const { count, startAddCount } = this.props;
+
+    startAddCount(count + 1);
+  }
+
   _handleClick = () => {
     const { count, startAddCount } = this.props;
 
@@ -49,5 +55,7 @@ const mapDispatchToProps = dispatch => ({
   startAddCount: value => dispatch(addCount(value))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(StartCoding);
-
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StartCoding);
