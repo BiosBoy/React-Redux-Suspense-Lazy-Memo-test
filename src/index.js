@@ -5,9 +5,6 @@ import AppContainer from './container';
 import store from './controller/store';
 import history from './controller/history';
 
-// const history = syncHistoryWithStore(createBrowserHistory(), store);
-// const customHistory = createBrowserHistory();
-
 const ENTRY_POINT = document.querySelector('#react-app-root');
 
 // creating starting endpoint for app.

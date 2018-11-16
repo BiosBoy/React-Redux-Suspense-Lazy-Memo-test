@@ -8,8 +8,7 @@ import styles from '../styles/index.scss';
 class AppLayout extends Component {
   render() {
     const { countDoubl, children } = this.props;
-
-    console.log(this.props, 'count');
+    console.log(this.props.state.router)
 
     return (
       <div className={styles.appWrapper}>
@@ -35,6 +34,7 @@ AppLayout.defaultProps = {
 };
 
 const mapStateToProps = state => ({
+  state,
   count: state.count,
   countDoubl: state.countDoubl
 });

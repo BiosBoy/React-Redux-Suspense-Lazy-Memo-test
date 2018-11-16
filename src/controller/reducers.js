@@ -1,4 +1,4 @@
-import { LOCATION_CHANGE } from 'react-router-redux';
+import { LOCATION_CHANGE } from 'connected-react-router';
 import { COUNT_ADD } from '../constants';
 import initialState from './initialState';
 
@@ -13,7 +13,7 @@ const ACTION_HANDLERS = {
   }),
   [LOCATION_CHANGE]: (state, action) => ({
     ...state,
-    locationChange: action.payload.pathname
+    locationChange: action.payload.location.pathname
   })
 };
 
