@@ -1,4 +1,4 @@
-import { COUNT_ADD } from './constants';
+import { COUNT_ADD } from '../constants';
 
 // ------------------------------------
 // Action Handlers
@@ -22,7 +22,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   const handler = ACTION_HANDLERS[action.type];
 
-  // console.log(state, action)
   return handler ? handler(state, action) : state;
 };
 

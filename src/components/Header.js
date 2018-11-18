@@ -1,13 +1,8 @@
-import { PropTypes } from 'prop-types';
 import React, { Fragment, memo } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/index.scss';
 
-const Header = props => {
-  const { countDoubl } = props;
-
-  console.log(countDoubl, 'countDoubl Header Memo_Func');
-
+const Header = () => {
   return (
     <Fragment>
       <div className={styles.appHeader}>
@@ -19,14 +14,6 @@ const Header = props => {
       </div>
     </Fragment>
   );
-};
-
-Header.propTypes = {
-  countDoubl: PropTypes.number
-};
-
-Header.defaultProps = {
-  countDoubl: 0
 };
 
 export default memo(Header);

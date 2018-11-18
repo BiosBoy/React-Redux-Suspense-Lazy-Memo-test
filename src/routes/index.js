@@ -13,16 +13,13 @@ const Components = {
 const AsyncComponent = props => {
   const { componentName } = props;
 
-  import(`./${componentName}/reducer`)
-    .then(({ default: reducer }) => {
-      injectReducer(rootStore, { key: componentName, reducer });
-    });
+  import(`./${componentName}/controller/reducer`).then(({ default: reducer }) => {
+    injectReducer(rootStore, { key: componentName, reducer });
+  });
 
   const Component = Components[componentName];
 
-  return (
-    <Component {...props} />
-  );
+  return <Component {...props} />;
 };
 
 export default AsyncComponent;

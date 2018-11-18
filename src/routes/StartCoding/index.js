@@ -1,17 +1,12 @@
 import { PropTypes } from 'prop-types';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { addCount } from './action';
+import { addCount } from './controller/action';
+import { Body } from '../../components';
 import styles from '../../styles/index.scss';
 
 class StartCoding extends PureComponent {
-  componentDidMount() {
-    const { count, startAddCount } = this.props;
-
-    startAddCount(count + 1);
-  }
-
-  _handleClick = () => {
+  _addCount = () => {
     const { count, startAddCount } = this.props;
 
     startAddCount(count + 1);
@@ -20,16 +15,15 @@ class StartCoding extends PureComponent {
   render() {
     const { countDoubl } = this.props;
 
-    console.log(countDoubl, 'countDoubl StartCoding');
-
     return (
-      <Fragment>
-        <div className={styles.helloWorld} onClick={this._handleClick}>
-          <span>On new page!</span>
-          <span> + {countDoubl}</span>
-        </div>
-        <div className={styles.helloStart}> Yes, start coding more now! :))</div>
-      </Fragment>
+      <Body
+        count={countDoubl}
+        onclick={this._addCount}
+        title='On new page!!'
+        description='Yes, start coding more now! :))'
+        buttonClass={styles.helloWorld}
+        descriptionClass={styles.helloStart}
+      />
     );
   }
 }

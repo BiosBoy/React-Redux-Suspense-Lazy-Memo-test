@@ -31,7 +31,7 @@
     ],
     "*.@(ts|tsx)": [
       "prettier --write --parser typescript",
-      "tslint --config tsconfig.json",
+      "tslint --config tslint.json",
       "git add",
       "jest --bail --findRelatedTests"
     ]

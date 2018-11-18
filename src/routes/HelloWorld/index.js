@@ -1,11 +1,12 @@
 import { PropTypes } from 'prop-types';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { addCount } from './action';
+import { addCount } from './controller/action';
+import { Body } from '../../components';
 import styles from '../../styles/index.scss';
 
 class HelloWorld extends PureComponent {
-  _handleClick = () => {
+  _addCount = () => {
     const { count, startAddCount } = this.props;
 
     startAddCount(count + 1);
@@ -15,13 +16,14 @@ class HelloWorld extends PureComponent {
     const { countDoubl } = this.props;
 
     return (
-      <Fragment>
-        <div className={styles.helloWorld} onClick={this._handleClick}>
-          <span>Hello World!</span>
-          <span> + {countDoubl}</span>
-        </div>
-        <div className={styles.helloStart}> Do not wait, start coding now! :)</div>
-      </Fragment>
+      <Body
+        count={countDoubl}
+        onclick={this._addCount}
+        title='Hello World!'
+        description='Do not wait, start coding now! :)'
+        buttonClass={styles.helloWorld}
+        descriptionClass={styles.helloStart}
+      />
     );
   }
 }
@@ -47,4 +49,7 @@ const mapDispatchToProps = dispatch => ({
   startAddCount: value => dispatch(addCount(value))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HelloWorld);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HelloWorld);
