@@ -6261,6 +6261,10 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "http://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
+mediaquery@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/mediaquery/-/mediaquery-0.0.3.tgz#387d61c10aa95ff4d6907f6aabdd22d7a898e03e"
+
 mem@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mem/-/mem-1.1.0.tgz#5edd52b485ca1d900fe64895505399a0dfa45f76"
@@ -8614,15 +8618,7 @@ react-router-dom@^4.3.1:
     react-router "^4.3.1"
     warning "^4.0.1"
 
-react-router-redux@^5.0.0-alpha.9:
-  version "5.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-5.0.0-alpha.9.tgz#825431516e0e6f1fd93b8807f6bd595e23ec3d10"
-  dependencies:
-    history "^4.7.2"
-    prop-types "^15.6.0"
-    react-router "^4.2.0"
-
-react-router@^4.2.0, react-router@^4.3.1:
+react-router@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.3.1.tgz#aada4aef14c809cb2e686b05cee4742234506c4e"
   dependencies:
@@ -8812,6 +8808,12 @@ redux-logger@^3.0.6:
   resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
   dependencies:
     deep-diff "^0.3.5"
+
+redux-responsive@^4.3.8:
+  version "4.3.8"
+  resolved "https://registry.yarnpkg.com/redux-responsive/-/redux-responsive-4.3.8.tgz#286ef51c96a7222f030c2f48e4f26ec3bb645a10"
+  dependencies:
+    mediaquery "0.0.3"
 
 redux@^4.0.0, redux@^4.0.1:
   version "4.0.1"

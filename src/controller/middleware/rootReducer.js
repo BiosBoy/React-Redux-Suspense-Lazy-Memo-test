@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
+import { createResponsiveStateReducer } from 'redux-responsive';
 import common from '../reducers';
 import history from '../history';
 
@@ -8,7 +9,12 @@ const makeRootReducer = asyncReducers => {
     ...asyncReducers,
     common,
     // routing
-    router: connectRouter(history)
+    router: connectRouter(history),
+    browser: createResponsiveStateReducer({
+      mobile: 600,
+      tablet: 1000,
+      desktop: 5000
+    })
   });
 };
 
